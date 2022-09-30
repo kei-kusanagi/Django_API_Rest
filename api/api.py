@@ -13,3 +13,8 @@ class UserAPI(APIView):
             return Response(serializer.data, status = status.HTTP_201_CREATED)
         else: 
             return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+    
+    def delete(self,request):
+        serializer = UserSerializer(data = request.data)
+        user = serializer.delete()
+        return Response(serializer.data, status = status.HTTP_200_OK)

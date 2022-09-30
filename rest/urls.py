@@ -19,5 +19,6 @@ from api.api import UserAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/1.0/create_user', UserAPI.as_view(), name = "api_create_user")
+    path('api/1.0/create_user', UserAPI.as_view(), name = "api_create_user"),
+    path('api/1.0/delete_user', UserAPI.as_view(), name = "api_delete_user"),
 ]

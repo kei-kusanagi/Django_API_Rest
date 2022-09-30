@@ -25,3 +25,8 @@ class UserSerializer(serializers.Serializer):
             raise serializers.ValidationError("Este nombre de usuario ya existe, ingrese uno nuevo")
         else:
             return data
+
+    def delete(self, validate_data):
+        instance = User()
+        instance.delete()
+        return instance
